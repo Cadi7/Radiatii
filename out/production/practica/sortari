@@ -1,0 +1,36 @@
+static void sortRoada()
+	{
+		ArrayList<ArrayList<Mar>> a=getLivada();
+		ArrayList<Rand> r=new ArrayList<Rand>();
+
+		for(int i=0;i<n;i++)
+		{
+			int sum=0;
+			for(int ii=0;ii<m;ii++)
+			{
+				sum+=a.get(i).get(ii).roada;
+			}
+			r.add(new Rand(i,sum));
+		}
+
+		for(int i=0;i<r.size();i++)
+		{
+			for(int ii=0;ii<r.size();ii++)
+			{
+				if(r.get(i).roadaT<r.get(ii).roadaT)
+				{
+					Collections.swap(r,i,ii);
+				}
+			}
+		}
+
+		System.out.println();
+		for(Rand i:r)
+		{
+			System.out.println("R"+(i.nr+1)+">"+i.roadaT);
+		}
+	}
+
+
+
+
